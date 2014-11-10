@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{% block content %}
+<h3><u>Recent Posts</h3></u><br>
+{% for post in posts %}
+<big><strong>{{post.title}} </strong></big>
+<p>{{post.comment}}</p>
+{% for comment in comments %}
+<p>{{comment.comments}}</p>
+ 
+<form action="" method="post"> 
+ <div class="col-md-12 form-group">
+            
+            <textarea class="form-control" id="comment" placeholder="Comment" name="comment"></textarea>
+        </div>
+ 
+        <div class="col-md-12 form-group text-right">
+            <button type="submit" class="btn btn-primary" name="option" value="submit">Submit</button>
+        </div>
+</form>
+{% endfor %}
+
+{% endfor %}
+
+
+
+<div id="section">
+<p>New post....</p>
+
+<form action =" " method="post">
+<dl>
+<dt><p>Title</p>
+<input type=text name=title placeholder="Enter title">
+<dt><p>Comment</p>
+<p><textarea name="comment" placeholder="Enter content..." rows="10" cols="60"></textarea></p>
+<dd><input type=submit value=Share name=post align=left>
+</dl>
+</form>
+</div>
+<p align=right><a href="http://127.0.0.1:5000/">Logout</a></p>
+
+{% endblock %}

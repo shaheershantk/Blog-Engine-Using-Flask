@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% block content %}
+<h3><u>Recent Posts</h3></u><br>
+{% for post in posts %}
+
+<big><strong>{{post.title}} </strong></big>
+
+<p>{{post.comment}}</p>
+
+{% for comment in comments %}
+<p>{{comment.comments}}</p>
+ 
+<form action="" method="post">        
+        <div class="col-md-12 form-group">
+            <label class="sr-only" for="email"></label>
+            <textarea class="form-control" id="comment" placeholder="Comment" name="comment"></textarea>
+        </div>
+ 
+        <div class="col-md-12 form-group text-right">
+            <button type="submit" class="btn btn-primary" name="option" value="submit">Submit</button>
+        </div>
+</form>
+{% endfor %}
+{% endfor %}
+<p align=right><input type=button value="Login" onclick="load()"></p>
+<script>
+function load(){
+document.location.href="http://127.0.0.1:5000/login"}
+</script>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+  
+  <ul class=entries>
+  {% for post in posts %}
+    <li><h2>{{ post['title'] }}</h2>{{ post['content']|safe }}
+  {% else %}
+    <li><em>Unbelievable. No posts here so far!</em>
+  {% endfor %}
+  </ul>
+<p>New post....</p>
+<p>title</p>
+<form action =" " method="post">
+<input type=text placeholder=title name=title>
+<p>comment</p>
+<p><textarea name="comment" placeholder="enter content..." rows="10" cols="60"></textarea></p>
+<input type=submit value=Share name=post>
+</form>
+
+{% endblock %}
+

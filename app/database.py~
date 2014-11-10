@@ -1,0 +1,7 @@
+import sqlite3
+conn = sqlite3.connect('blog.db') 
+c = conn.cursor()
+c.execute("DROP TABLE IF EXISTS posts")
+c.execute('''CREATE TABLE paintstore(title text,content text)''')
+conn.commit()
+conn.close()

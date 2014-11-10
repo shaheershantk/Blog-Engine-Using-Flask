@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class=metanav>
+
+<form action=" " method="post">
+<dl>
+<dt>Username:
+<dd><input type='text' name='username' value='{{request.form.username}}'>
+<dt>Password:
+<dd><input type='password' name='password' value='{{request.form.password}}'></br>
+<br>
+<input class='btn btn-default' type=submit value=Login>
+</dl>
+</form>
+
+
+
+</div>
+
+{% if error %}
+	<p class="error"><strong>incorrect:</strong>{{error}}</p>
+	{% endif %}
+	{% for message in get_flashed_messages() %}
+	<div class=flash>{{ message }}</div>
+	{% endfor %}
+
+{% endblock %}

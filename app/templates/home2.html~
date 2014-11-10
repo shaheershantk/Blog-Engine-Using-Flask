@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% block content %}
+<h1>Recent Posts</h1><br>
+{% for post in posts %}
+<big><u><strong>{{post.title}} </strong></u></big>
+<p>{{post.comment}}</p>
+</script>
+{% endfor %}
+<p align=right><input type=button value="login" onclick="load()"></p>
+<script>
+function load(){
+document.location.href="http://127.0.0.1:5000/login"}
+</script>
+
+{% endblock %}

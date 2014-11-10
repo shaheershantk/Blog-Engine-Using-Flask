@@ -1,0 +1,10 @@
+{% extends "base.html"%}
+{% block content %}
+<h1>RECENT POSTS</h1><br>
+{% for post in posts %}
+<big><u><strong>{{post.title}} </strong></u></big>
+<p>{{post.content}}</p>
+
+{% endfor %}
+
+{% endblock %}
